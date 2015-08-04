@@ -9,6 +9,7 @@ This role currently supports apt, yum, brew, zypper and pacman. Feel free to sen
 pull or feature request to add your favorite package manager!
 
 **Attention:**
+
 - This role should be deprecated when version 2 off ansible comes out! (see
   [package module](http://docs.ansible.com/ansible/package_module.html))
 - This role handles name differences between package managers but not between
