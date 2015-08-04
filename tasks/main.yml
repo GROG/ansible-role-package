@@ -1,0 +1,16 @@
+---
+
+- include: package-apt.yml
+  when: ansible_pkg_mgr == 'apt'
+
+- include: package-yum.yml
+  when: ansible_pkg_mgr == 'yum'
+
+- include: package-brew.yml
+  when: ansible_os_family == 'Darwin'
+
+- include: package-zypper.yml
+  when: ansible_pkg_mgr == 'zypper'
+
+- include: package-pacman.yml
+  when: ansible_pkg_mgr == 'pacman'

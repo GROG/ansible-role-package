@@ -1,0 +1,13 @@
+---
+
+- name: Apt
+  sudo: yes
+  apt:
+    name: "{{ item.apt | default(item.name) }}"
+    state: "{{ package_state }}"
+    update_cache: "{{ package_update_cache }}"
+    cache_valid_time: "{{ package_cache_valid_time }}"
+  with_flattened:
+    - package_list
+    - package_list_host
+    - package_list_group

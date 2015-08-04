@@ -1,0 +1,11 @@
+---
+
+- name: Zypper
+  sudo: yes
+  zypper:
+    name: "{{ item.zypper | default(item.name) }}"
+    state: "{{ package_state }}"
+  with_flattened:
+    - package_list
+    - package_list_host
+    - package_list_group

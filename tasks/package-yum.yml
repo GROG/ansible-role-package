@@ -1,0 +1,13 @@
+---
+
+- name: Yum
+  sudo: yes
+  apt:
+    name: "{{ item.yum | default(item.name) }}"
+    state: "{{ package_state }}"
+    update_cache: "{{ package_update_cache }}"
+  with_flattened:
+    - package_list
+    - package_list_host
+    - package_list_group
+

@@ -1,0 +1,19 @@
+---
+
+# List of packages to install
+package_list: []
+
+# List of packages to install
+package_list_host: []
+
+# List of packages to install
+package_list_group: []
+
+# Packages state
+package_state: present
+
+# Update cache?
+package_update_cache: yes
+
+# Cache valid time
+package_cache_valid_time: 3600
