@@ -1,7 +1,7 @@
 ---
 
 - name: Brew
-  sudo: no
+  become: no
   apt:
     name: "{{ item.brew | default(item.name) }}"
     state: "{{ package_state }}"

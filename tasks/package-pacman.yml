@@ -1,7 +1,6 @@
 ---
 
 - name: Pacman
-  sudo: yes
   apt:
     name: "{{ item.pacman | default(item.name) }}"
     state: "{{ package_state }}"

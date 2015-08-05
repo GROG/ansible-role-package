@@ -1,7 +1,6 @@
 ---
 
 - name: Apt
-  sudo: yes
   apt:
     name: "{{ item.apt | default(item.name) }}"
     state: "{{ package_state }}"

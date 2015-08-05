@@ -18,7 +18,8 @@ pull or feature request to add your favorite package manager!
 
 ## Requirements
 
-None.
+- Hosts should be bootstrapt for ansible usage (have python,...)
+- Root privileges, eg `become: yes`
 
 ## Role Variables
 
@@ -65,11 +66,14 @@ None.
 ---
 - hosts: servers
   roles:
-  - role: GROG.reboot
-    package_list:
-      - name: htop
-        brew: htop-osx
-      - name: tree
+  - { role: GROG.reboot,
+      become: yes,
+        package_list: [
+          { name: htop,
+            brew: htop-osx },
+          { name: tree }
+        ]
+    }
 ```
 
 ## License
