@@ -2,7 +2,7 @@
 
 - name: Brew
   become: no
-  brew:
+  homebrew:
     name: "{{ item.brew | default(item.name) }}"
     state: "{{ package_state }}"
   with_flattened:
