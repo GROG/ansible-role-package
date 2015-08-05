@@ -1,7 +1,7 @@
 ---
 
 - name: Yum
-  apt:
+  yum:
     name: "{{ item.yum | default(item.name) }}"
     state: "{{ package_state }}"
     update_cache: "{{ package_update_cache }}"

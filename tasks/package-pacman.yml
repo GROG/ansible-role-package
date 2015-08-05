@@ -1,7 +1,7 @@
 ---
 
 - name: Pacman
-  apt:
+  pacman:
     name: "{{ item.pacman | default(item.name) }}"
     state: "{{ package_state }}"
   with_flattened:
