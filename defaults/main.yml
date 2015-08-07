@@ -1,12 +1,12 @@
 ---
 
-# List of packages to install
+# List of packages
 package_list: []
 
-# List of packages to install
+# List of packages
 package_list_host: []
 
-# List of packages to install
+# List of packages
 package_list_group: []
 
 # Packages state

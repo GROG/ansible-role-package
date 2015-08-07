@@ -3,7 +3,7 @@
 - name: Zypper
   zypper:
     name: "{{ item.zypper | default(item.name) }}"
-    state: "{{ package_state }}"
+    state: "{{ item.state | default(package_state) }}"
   with_flattened:
     - package_list
     - package_list_host

@@ -3,7 +3,7 @@
 - name: Yum
   yum:
     name: "{{ item.yum | default(item.name) }}"
-    state: "{{ package_state }}"
+    state: "{{ item.state | default(package_state) }}"
     update_cache: "{{ package_update_cache }}"
   with_flattened:
     - package_list
