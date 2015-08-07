@@ -33,7 +33,7 @@ pull or feature request to add your favorite package manager!
 #### `package_list` details
 
 `package_list`, `package_list_host` and `package_list_group` are merged when
-installing the packages. You can use the host and group lists to specify
+managing the packages. You can use the host and group lists to specify
 packages per host or group.
 
 The package list allows you to define which packages must be managed. By
@@ -41,7 +41,7 @@ default `item.name` will be installed/removed. If however a more specific name
 is available for the current package manager (eg `item.apt`) this will be used.
 
 You can also define the state per package (`item.state`). If not defined, the
-defautl will be used (`package_state`).
+default will be used (`package_state`).
 
 ```yaml
 package_list:
