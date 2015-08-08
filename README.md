@@ -5,8 +5,8 @@
 
 A role for managing packages on different operating systems.
 
-This role currently supports apt, yum, brew, zypper and pacman. Feel free to send a
-pull or feature request to add your favorite package manager!
+This role currently supports apt, yum, brew, zypper, pacman and portage. Feel
+free to send a pull or feature request to add your favorite package manager!
 
 **Attention:**
 
@@ -16,7 +16,7 @@ pull or feature request to add your favorite package manager!
 
 ## Requirements
 
-- Hosts should be bootstrapt for ansible usage (have python,...)
+- Hosts should be bootstrapped for ansible usage (have python,...)
 - Root privileges, eg `become: yes`
 
 ## Role Variables
@@ -36,26 +36,37 @@ pull or feature request to add your favorite package manager!
 managing the packages. You can use the host and group lists to specify
 packages per host or group.
 
-The package list allows you to define which packages must be managed. By
-default `item.name` will be installed/removed. If however a more specific name
-is available for the current package manager (eg `item.apt`) this will be used.
+The package list allows you to define which packages must be managed. Each item
+in the list can have following attributes:
 
-You can also define the state per package (`item.state`). If not defined, the
-default will be used (`package_state`).
+| Variable | Description | required |
+|----------|-------------|----------|
+| `name` | Package name | yes |
+| `state` | Package state | no |
+| `apt` | Package name for apt | no |
+| `yum` | Package name for yum | no |
+| `brew` | Package name for brew | no |
+| `zypper` | Package name for zypper | no |
+| `pacman` | Package name for pacman | no |
+| `portage` | Package name for portage | no |
+
+By default `package_state` and `item.name` are used when managing the packages.
+If however `item.state` is defined or a more specific package name (eg
+`item.apt`) these will be used instead.
+
+##### `package_list` example
 
 ```yaml
 package_list:
-  - name: package               # Package with same name in all package managers
-  - name: package1              # Package with deviating state
-    state: 'absent'
-  - name: package2              # Package with different name in apt
+  - name: package
+  - name: package1
+    state: absent
+  - name: package2
     apt: package2_apt_name
-  - name: package3              # Example for all supported package managers
-    apt: package3_apt_name
+  - name: package3
     yum: package3_yum_name
-    brew: package3_brew_name
-    zypper: package3_zypper_name
     pacman: package3_pacman_name
+    portage: package3_portage_name
 ```
 
 ## Dependencies

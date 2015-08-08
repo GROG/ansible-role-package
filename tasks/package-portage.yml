@@ -1,0 +1,11 @@
+---
+
+- name: Portage
+  portage:
+    package: "{{ item.portage | default(item.name) }}"
+    state: "{{ item.state | default(package_state) }}"
+    sync: "{{ package_update_cache }}"
+  with_flattened:
+    - package_list
+    - package_list_host
+    - package_list_group

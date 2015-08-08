@@ -14,3 +14,6 @@
 
 - include: package-pacman.yml
   when: ansible_pkg_mgr == 'pacman'
+
+- include: package-portage.yml
+  when: ansible_pkg_mgr == 'portage'
