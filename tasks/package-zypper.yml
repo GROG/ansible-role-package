@@ -4,6 +4,7 @@
   zypper:
     name: "{{ item.zypper | default(item.name) }}"
     state: "{{ item.state | default(package_state) }}"
+  when: (item.zypper_ignore|default('no'))|string in 'False,false,No,no'
   with_flattened:
     - package_list
     - package_list_host

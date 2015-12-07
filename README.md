@@ -44,15 +44,22 @@ in the list can have following attributes:
 | `name` | Package name | yes |
 | `state` | Package state | no |
 | `apt` | Package name for apt | no |
+| `apt_ignore` | Ignore package for apt | no |
 | `yum` | Package name for yum | no |
+| `yum_ignore` | Ignore package for yum | no |
 | `brew` | Package name for brew | no |
+| `brew_ignore` | Ignore package for brew | no |
 | `zypper` | Package name for zypper | no |
+| `zypper_ignore` | Ignore package for zypper | no |
 | `pacman` | Package name for pacman | no |
+| `pacman_ignore` | Ignore package for pacman | no |
 | `portage` | Package name for portage | no |
+| `portage_ignore` | Ignore package for portage | no |
 
 By default `package_state` and `item.name` are used when managing the packages.
 If however `item.state` is defined or a more specific package name (eg
-`item.apt`) these will be used instead.
+`item.apt`) these will be used instead. If you want a package to be ignored for
+same package managers you can add `***_ignore`: yes.
 
 ##### `package_list` example
 
@@ -64,6 +71,7 @@ package_list:
   - name: package2
     apt: package2_apt_name
   - name: package3
+    apt_ignore: yes 
     yum: package3_yum_name
     pacman: package3_pacman_name
     portage: package3_portage_name
