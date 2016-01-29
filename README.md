@@ -1,6 +1,6 @@
 # Package
 
-[![Ansible Galaxy](http://img.shields.io/badge/galaxy-GROG.package-660198.svg?style=flat)](https://galaxy.ansible.com/list#/roles/4689)
+[![Ansible Galaxy](http://img.shields.io/badge/galaxy-GROG.package-660198.svg?style=flat)](https://galaxy.ansible.com/GROG/package)
 [![Build Status](https://travis-ci.org/GROG/ansible-role-package.svg?branch=master)](https://travis-ci.org/GROG/ansible-role-package)
 
 A role for managing packages on different operating systems.
