@@ -71,7 +71,7 @@ package_list:
   - name: package2
     apt: package2_apt_name
   - name: package3
-    apt_ignore: yes 
+    apt_ignore: yes
     yum: package3_yum_name
     pacman: package3_pacman_name
     portage: package3_portage_name
@@ -97,14 +97,13 @@ None.
     }
 ```
 
-## License
-
-LGPLv3
-
 ## Contributing
 
 All assistance, changes or ideas [welcome](https://github.com/GROG/ansible-role-package/issues)!
 
-## Author Information
+## Author
 
 By [G. Roggemans](https://github.com/groggemans)
+
+## License
+MIT
