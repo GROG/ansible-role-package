@@ -98,6 +98,12 @@ galaxy_info:
   #  - lenny
   #  - squeeze
   #  - wheezy
-  categories:
+  galaxy_tags:
+  - apt
+  - yum
+  - brew
+  - zypper
+  - pacman
+  - portage
   - packaging
 dependencies: []
