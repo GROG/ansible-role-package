@@ -1,7 +1,7 @@
 # Package
 
-[![Ansible Galaxy](http://img.shields.io/badge/galaxy-GROG.package-660198.svg?style=flat)](https://galaxy.ansible.com/GROG/package)
-[![Build Status](https://travis-ci.org/GROG/ansible-role-package.svg?branch=master)](https://travis-ci.org/GROG/ansible-role-package)
+[![Ansible Galaxy][galaxy_image]][galaxy_link]
+[![Build Status][travis_image]][travis_link]
 
 A role for managing packages on different operating systems.
 
@@ -99,11 +99,19 @@ None.
 
 ## Contributing
 
-All assistance, changes or ideas [welcome](https://github.com/GROG/ansible-role-package/issues)!
+All assistance, changes or ideas [welcome][issues]!
 
 ## Author
 
-By [G. Roggemans](https://github.com/groggemans)
+By [G. Roggemans][groggemans]
 
 ## License
 MIT
+
+[galaxy_image]:         http://img.shields.io/badge/galaxy-GROG.package-660198.svg?style=flat
+[galaxy_link]:          https://galaxy.ansible.com/GROG/package
+[travis_image]:         https://travis-ci.org/GROG/ansible-role-package.svg?branch=master
+[travis_link]:          https://travis-ci.org/GROG/ansible-role-package
+
+[issues]:               https://github.com/GROG/ansible-role-package/issues
+[groggemans]:           https://github.com/groggemans
