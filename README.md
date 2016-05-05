@@ -61,7 +61,7 @@ in the list can have following attributes:
 By default `package_state` and `item.name` are used when managing the packages.
 If however `item.state` is defined or a more specific package name (eg
 `item.apt`) these will be used instead. If you want a package to be ignored for
-same package managers you can add `***_ignore`: yes.
+some package managers you can add `***_ignore`: yes.
 
 ##### `package_list` example
 
