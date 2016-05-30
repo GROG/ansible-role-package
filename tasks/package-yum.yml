@@ -7,7 +7,6 @@
     update_cache: "{{ package_update_cache }}"
   when: (item.yum_ignore|default('no'))|string in 'False,false,No,no'
   with_flattened:
-    - package_list
-    - package_list_host
-    - package_list_group
-
+    - "{{ package_list }}"
+    - "{{ package_list_host }}"
+    - "{{ package_list_group }}"
