@@ -106,4 +106,7 @@ galaxy_info:
   - pacman
   - portage
   - packaging
+
+allow_duplicates: yes
+
 dependencies: []
