@@ -7,8 +7,9 @@
 
 A role for managing packages on different operating systems.
 
-This role currently supports apt, yum, brew, zypper, pacman and portage. Feel
-free to send a pull or feature request to add your favorite package manager!
+This role currently supports apt, yum, dnf, brew, zypper, pacman and portage.
+Feel free to send a pull or feature request to add your favorite package
+manager!
 
 **Attention:**
 
@@ -49,6 +50,8 @@ in the list can have following attributes:
 | `apt_ignore` | Ignore package for apt | no |
 | `yum` | Package name for yum | no |
 | `yum_ignore` | Ignore package for yum | no |
+| `dnf` | Package name for dnf | no |
+| `dnf_ignore` | Ignore package for dnf | no |
 | `brew` | Package name for brew | no |
 | `brew_ignore` | Ignore package for brew | no |
 | `zypper` | Package name for zypper | no |
