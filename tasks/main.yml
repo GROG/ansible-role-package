@@ -6,6 +6,9 @@
 - include: package-yum.yml
   when: ansible_pkg_mgr == 'yum'
 
+- include: package-dnf.yml
+  when: ansible_pkg_mgr == 'dnf'
+
 - include: package-brew.yml
   when: ansible_os_family == 'Darwin'
 

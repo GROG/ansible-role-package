@@ -1,0 +1,11 @@
+---
+
+- name: dnf
+  dnf:
+    name: "{{ item.dnf | default(item.name) }}"
+    state: "{{ item.state | default(package_state) }}"
+  when: (item.dnf_ignore|default('no'))|string in 'False,false,No,no'
+  with_flattened:
+    - "{{ package_list }}"
+    - "{{ package_list_host }}"
+    - "{{ package_list_group }}"
