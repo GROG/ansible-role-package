@@ -48,6 +48,7 @@ in the list can have following attributes:
 | `state` | Package state | no |
 | `apt` | Package name for apt | no |
 | `apt_ignore` | Ignore package for apt | no |
+| `apt_install_recommends` | Whether to install recommended dependencies apt    | no |
 | `yum` | Package name for yum | no |
 | `yum_ignore` | Ignore package for yum | no |
 | `dnf` | Package name for dnf | no |
