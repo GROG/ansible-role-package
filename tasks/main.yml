@@ -4,7 +4,7 @@
   when: ansible_pkg_mgr == 'apt'
 
 - include: package-yum.yml
-  when: ansible_pkg_mgr == 'yum'
+  when: ansible_pkg_mgr in ['yum','dnf']
 
 - include: package-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
