@@ -1,22 +1,22 @@
 ---
 
-- include: package-apt.yml
+- import_tasks: package-apt.yml
   when: ansible_pkg_mgr == 'apt'
 
-- include: package-yum.yml
+- import_tasks: package-yum.yml
   when: ansible_pkg_mgr == 'yum'
 
-- include: package-dnf.yml
+- import_tasks: package-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
-- include: package-brew.yml
+- import_tasks: package-brew.yml
   when: ansible_os_family == 'Darwin'
 
-- include: package-zypper.yml
+- import_tasks: package-zypper.yml
   when: ansible_pkg_mgr == 'zypper'
 
-- include: package-pacman.yml
+- import_tasks: package-pacman.yml
   when: ansible_pkg_mgr == 'pacman'
 
-- include: package-portage.yml
+- import_tasks: package-portage.yml
   when: ansible_pkg_mgr == 'portage'
