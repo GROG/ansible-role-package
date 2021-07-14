@@ -8,7 +8,4 @@
     cache_valid_time: "{{ package_cache_valid_time }}"
     install_recommends: "{{ item.apt_install_recommends | default(omit) }}"
   when: (item.apt_ignore|default('no'))|string in 'False,false,No,no'
-  with_flattened:
-    - "{{ package_list }}"
-    - "{{ package_list_host }}"
-    - "{{ package_list_group }}"
+  with_items: "{{ (package_list + package_list_group + package_list_host ) | list | unique }}"
