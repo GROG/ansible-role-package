@@ -1,0 +1,4 @@
+---
+
+# List of unique packages
+packages: "{{ (package_list + package_list_group + package_list_host ) | list | unique }}"
