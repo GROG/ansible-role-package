@@ -5,5 +5,6 @@
   homebrew:
     name: "{{ item.brew | default(item.name) }}"
     state: "{{ item.state | default(package_state) }}"
+    update_homebrew: "{{ package_update_cache }}"
   when: (item.brew_ignore|default('no'))|string in 'False,false,No,no'
   with_items: "{{ packages }}"
