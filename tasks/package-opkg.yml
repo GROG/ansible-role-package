@@ -1,0 +1,9 @@
+---
+
+- name: Opkg
+  opkg:
+    name: "{{ item.opkg | default(item.name) }}"
+    state: "{{ item.state | default(package_state) }}"
+    update_cache: "{{ package_update_cache }}"
+  when: (item.opk_ignore|default('no'))|string in 'False,false,No,no'
+  with_items: "{{ packages }}"

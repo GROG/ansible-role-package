@@ -49,6 +49,8 @@ in the list can have following attributes:
 | `apt` | Package name for apt | no |
 | `apt_ignore` | Ignore package for apt | no |
 | `apt_install_recommends` | Whether to install recommended dependencies apt    | no |
+| `apk` | Package name for apk | no |
+| `apk_ignore` | Ignore package for apk | no |
 | `yum` | Package name for yum | no |
 | `yum_ignore` | Ignore package for yum | no |
 | `dnf` | Package name for dnf | no |
@@ -61,6 +63,8 @@ in the list can have following attributes:
 | `pacman_ignore` | Ignore package for pacman | no |
 | `portage` | Package name for portage | no |
 | `portage_ignore` | Ignore package for portage | no |
+| `opkg` | Package name for opkg | no |
+| `opkg_ignore` | Ignore package for opkg | no |
 
 By default `package_state` and `item.name` are used when managing the packages.
 If however `item.state` is defined or a more specific package name (eg
