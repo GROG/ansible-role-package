@@ -2,7 +2,7 @@
 
 - import_tasks: "{{ item }}"
   with_first_found:
-    - "package-{{ ansible_pkg_mgr }}"
+    - "package-{{ ansible_pkg_mgr }}.yml"
 
 #- import_tasks: package-apt.yml
 #  when: ansible_pkg_mgr == 'apt'
