@@ -1,22 +1,26 @@
 ---
 
-- import_tasks: package-apt.yml
-  when: ansible_pkg_mgr == 'apt'
+- import_tasks: "{{ item }}"
+  with_first_found:
+    - "package-{{ ansible_pkg_mgr }}"
 
-- import_tasks: package-yum.yml
-  when: ansible_pkg_mgr == 'yum'
-
-- import_tasks: package-dnf.yml
-  when: ansible_pkg_mgr == 'dnf'
-
-- import_tasks: package-brew.yml
-  when: ansible_os_family == 'Darwin'
-
-- import_tasks: package-zypper.yml
-  when: ansible_pkg_mgr == 'zypper'
-
-- import_tasks: package-pacman.yml
-  when: ansible_pkg_mgr == 'pacman'
-
-- import_tasks: package-portage.yml
-  when: ansible_pkg_mgr == 'portage'
+#- import_tasks: package-apt.yml
+#  when: ansible_pkg_mgr == 'apt'
+#
+#- import_tasks: package-yum.yml
+#  when: ansible_pkg_mgr == 'yum'
+#
+#- import_tasks: package-dnf.yml
+#  when: ansible_pkg_mgr == 'dnf'
+#
+#- import_tasks: package-brew.yml
+#  when: ansible_os_family == 'Darwin'
+#
+#- import_tasks: package-zypper.yml
+#  when: ansible_pkg_mgr == 'zypper'
+#
+#- import_tasks: package-pacman.yml
+#  when: ansible_pkg_mgr == 'pacman'
+#
+#- import_tasks: package-portage.yml
+#  when: ansible_pkg_mgr == 'portage'
