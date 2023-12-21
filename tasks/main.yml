@@ -1,6 +1,6 @@
 ---
 
-- import_tasks: "{{ item }}"
+- include_tasks: "{{ item }}"
   with_first_found:
     - "package-{{ ansible_pkg_mgr }}.yml"
 
