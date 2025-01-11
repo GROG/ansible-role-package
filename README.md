@@ -7,7 +7,7 @@
 
 A role for managing packages on different operating systems.
 
-This role currently supports apt, yum, dnf, brew, zypper, pacman and portage.
+This role currently supports apt, yum, dnf, brew, zypper, pacman, portage and snap.
 Feel free to send a pull or feature request to add your favorite package
 manager!
 
@@ -65,6 +65,7 @@ in the list can have following attributes:
 | `portage_ignore` | Ignore package for portage | no |
 | `opkg` | Package name for opkg | no |
 | `opkg_ignore` | Ignore package for opkg | no |
+| `snap` | Package name for snap | no |
 
 By default `package_state` and `item.name` are used when managing the packages.
 If however `item.state` is defined or a more specific package name (eg
