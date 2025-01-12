@@ -1,0 +1,12 @@
+---
+
+- name: Snap
+  snap:
+    name: "{{ item.snap | default(item.name) }}"
+    state: "{{ item.state | default(package_state) }}"
+    classic: "{{ item.snap_classic | default(omit) }}"
+    dangerous: "{{ item.snap_dangerous | default(omit) }}"
+    channel: "{{ item.snap_channel | default(omit) }}"
+    options: "{{ item.snap_options | default(omit) }}"
+  when: (item.snap_ignore|default('no'))|string in 'False,false,No,no'
+  with_items: "{{ packages }}"
